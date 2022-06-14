@@ -6,6 +6,16 @@ const port = 5000;
 const cors = require('cors')
 
 
+const mysql = require("mysql");
+
+const db = mysql.createPool({
+    host:"free-db.ccj1y6o1kv7w.us-east-2.rds.amazonaws.com",
+    user:"admin",
+    password:"hudadong123",
+    database:"webxr_data"
+})
+
+
 app.use(cors())
 app.use(express.json());
 app.use(
@@ -15,7 +25,15 @@ app.use(
 );
 
 app.get("/",(req,res)=>{
-    res.send("<h1>Hello World!? Ubuntu</h1>" );
+
+    const sqlSelect = "SELECT * FROM product_data"
+    db.query(sqlSelect,(err,result)=>{
+        console.log(result)
+        if (err) throw err
+        res.json(result)
+        res.send("<h1>Hello World!? Ubuntu</h1>" );
+    })
+
 })
 
 app.listen(port, () => {
