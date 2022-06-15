@@ -31,7 +31,6 @@ app.get("/",(req,res)=>{
         console.log(result)
         if (err) throw err
         res.json(result)
-        res.send("<h1>Hello World!? Ubuntu</h1>" );
     })
 
 })
