@@ -2,25 +2,25 @@
 
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = 3000;
 const cors = require('cors')
 
 
 const mysql = require("mysql");
 
-// const db = mysql.createPool({
-//     host:"free-db.ccj1y6o1kv7w.us-east-2.rds.amazonaws.com",
-//     user:"admin",
-//     password:"hudadong123",
-//     database:"webxr_data"
-// })
-
 const db = mysql.createPool({
-  host:"localhost",
-  user:"root",
-  password:"Dadonghu123!",
-  database:"webxr_data"
+    host:"free-db.ccj1y6o1kv7w.us-east-2.rds.amazonaws.com",
+    user:"admin",
+    password:"hudadong123",
+    database:"webxr_data"
 })
+
+// const db = mysql.createPool({
+//   host:"localhost",
+//   user:"root",
+//   password:"Dadonghu123!",
+//   database:"webxr_data"
+// })
 
 
 app.use(cors())
