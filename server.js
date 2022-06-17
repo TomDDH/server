@@ -18,7 +18,7 @@ const mysql = require("mysql");
 const db = mysql.createPool({
   host:"localhost",
   user:"root",
-  password:"Dadonghu123s!",
+  password:"Dadonghu123!",
   database:"webxr_data"
 })
 
